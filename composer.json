@@ -1,0 +1,16 @@
+{
+  "name": "eslam/design-pattern",
+  "description": "this package holds the content of the oop & design pattern, some refereces, and more.",
+  "autoload": {
+    "psr-4": {
+      "DesignPattern\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Eslam-Nazer",
+      "email": "eslam.nazer43@gmail.com"
+    }
+  ],
+  "require": {}
+}
