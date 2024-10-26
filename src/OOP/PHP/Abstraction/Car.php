@@ -2,12 +2,16 @@
 
 namespace DesignPattern\OOP\PHP\Abstraction;
 
+use DesignPattern\OOP\PHP\Encapsulation\CarDashboard;
+
 abstract class Car
 {
     protected int $speed;
     protected int $numberOfDoors;
     protected string $gearboxSystem;
     protected string $color;
+
+    private CarDashboard $carDashboad;
     /**
      * @param int $speed
      * @param int $numberOfDoors
@@ -27,4 +31,20 @@ abstract class Car
     public abstract function turnOff(): bool;
     public abstract function acclerate(int $speed): bool;
     public abstract function park(): bool;
+
+    public function installDashboard(CarDashboard $dashboard)
+    {
+        $this->carDashboad = $dashboard;
+    }
+    /**
+     * @return string
+     */
+    public function CarInfo(): string
+    {
+        if ($this->carDashboad) {
+            return "The speed is {$this->speed} \n more info ... {$this->carDashboad->readDashboard()}";
+        } else {
+            return "The speed is {$this->speed} \n";
+        }
+    }
 }
